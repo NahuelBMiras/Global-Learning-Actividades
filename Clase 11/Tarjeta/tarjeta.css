@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100svh;
+  background-image: linear-gradient(
+    rgba(255, 85, 85, 255),
+    rgba(182, 85, 157, 255)
+  );
+}
+
+article {
+  margin: 1em auto;
+  width: 90%;
+  aspect-ratio: 1/2;
+  max-width: 370px;
+  max-height: 735px;
+  background-color: aliceblue;
+  border-radius: 3em;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1.5fr 1fr;
+
+  .container-img {
+    position: relative;
+    order: 1;
+    .fondo {
+      width: 100%;
+      aspect-ratio: 5/2;
+      background-image: url(img/mamao-fondo.jpg);
+      background-size: cover;
+      border-radius: 3em 3em 0 0;
+    }
+    .character {
+      box-sizing: border-box;
+      background-image: url(img/mamao-1.jpg);
+      width: 29%;
+      aspect-ratio: 1/1;
+      background-size: cover;
+      border: 0.5em solid aliceblue;
+      border-radius: 50%;
+      position: absolute;
+      top: 40%;
+      right: 50%;
+      transform: translate(50%, 10%);
+    }
+  }
+
+  .character_presentacion {
+    order: 2;
+    display: flex;
+    position: relative;
+    .character_presentacion-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      .character_name {
+        .character_name_text {
+          text-align: center;
+          font-size: 2.5rem;
+        }
+        .character_name_subtext {
+          color: rgba(0, 0, 0, 0.384);
+        }
+      }
+
+      .character_description {
+        padding: 0.3em 2em;
+        text-align: center;
+        .character_description_text {
+        }
+      }
+    }
+  }
+
+  .redes {
+    margin-top: 1em;
+    text-align: center;
+    order: 3;
+    padding: 0.5em;
+    .redes-ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em;
+        list-style: none;
+        border-radius: 3em;
+        &:hover {
+          background-color: rgb(233, 239, 236);
+        }
+        a {
+          width: 100%;
+          background-size: cover;
+          background-color: transparent;
+          padding: 0.4em;
+          color: black;
+          text-decoration: none;
+          font-size: 1.1rem;
+        }
+        &:hover a {
+          font-weight: 900;
+          color: rgba(222, 109, 115, 255);
+        }
+      }
+      .icon-1 {
+        order: 1;
+      }
+      .icon-2 {
+        order: 2;
+      }
+      .icon-3 {
+        order: 3;
+      }
+    }
+  }
+}

@@ -34,10 +34,6 @@ header {
 main {
   margin-bottom: 2em;
   .main__article {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr;
-
     margin: 1em;
     padding: 0.5em;
 
@@ -110,12 +106,19 @@ footer {
       background-color: rgba(229, 229, 229, 255);
       margin: 0.8em;
       padding: 0.6em;
+      cursor: pointer;
 
       .footer__nav-link {
         color: rgba(116, 132, 158, 255);
         .footer__nav-icon {
           color: rgba(0, 34, 83, 255);
         }
+      }
+      &:hover {
+        background-color: rgba(150, 150, 150, 1);
+      }
+      &:hover a {
+        color: aliceblue;
       }
     }
   }
@@ -184,7 +187,45 @@ footer {
   }
 }
 
+@media (width > 900px) {
+  main {
+    margin-bottom: 2em;
+    .main__article {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: 1fr;
+
+      margin: 1em;
+      padding: 0.5em;
+
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+  }
+
+  .footer__form {
+    .footer__form-fieldset {
+      width: 60%;
+    }
+  }
+}
+
 @media (width > 1300px) {
+  main {
+    margin-bottom: 2em;
+    .main__article {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: 1fr;
+
+      margin: 1em;
+      padding: 0.5em;
+
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+  }
+
   .footer__form {
     .footer__form-fieldset {
       width: 60%;
