@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background: linear-gradient(to right, goldenrod, crimson);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  margin-top: 23em;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+form {
+  margin-top: 2em;
+}
+
+label {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 0 0.8em;
+  width: 15em;
+  height: 2.8rem;
+}
+
+button {
+  padding: 0.4em 1.3em;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: rgba(254, 215, 5, 255);
+  border: 0.146em solid black;
+  border-radius: 1em;
+}
