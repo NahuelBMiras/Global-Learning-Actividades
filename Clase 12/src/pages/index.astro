@@ -1,4 +1,5 @@
 ---
+import InputsName from "../components/InputsName.astro";
 import Header from "../layouts/Header.astro";
 ---
 
@@ -7,14 +8,7 @@ import Header from "../layouts/Header.astro";
     <fieldset>
       <legend>Tu consulta</legend>
       <div class="form-container">
-        <label
-          >Nombre/s
-          <input type="text" placeholder="Nombre" />
-        </label>
-        <label
-          >Apellido/s
-          <input type="text" placeholder="Apellido" />
-        </label>
+        <InputsName />
         <label
           >Email or Username
           <input type="email" placeholder="tumail@gmail.com" />
@@ -28,12 +22,34 @@ import Header from "../layouts/Header.astro";
           <input type="date" />
         </label>
       </div>
-      <textarea name="mensaje" rows="4" cols="50"></textarea>
+      <textarea
+        name="mensaje"
+        rows="4"
+        cols="50"
+        placeholder="Contenido del asunto..."></textarea>
 
       <button>Send</button>
     </fieldset>
   </form>
 </Header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const misInputs = document.querySelectorAll("input");
+
+    misInputs.forEach((input, indice) => {
+      input.addEventListener("keypress", (evento) => {
+        if (evento.key === "Enter") {
+          evento.preventDefault();
+          if (indice < misInputs.length - 1) {
+            misInputs[indice + 1].focus();
+          }
+        }
+      });
+    });
+  });
+</script>
+
 
 <style>
   form {
@@ -54,10 +70,12 @@ import Header from "../layouts/Header.astro";
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
+
         label {
           font-size: 1rem;
           margin-top: 1em;
           cursor: pointer;
+
           input {
             padding: 0.3em;
           }
@@ -67,6 +85,7 @@ import Header from "../layouts/Header.astro";
       textarea {
         margin-top: 1em;
       }
+
       button {
         margin-top: 1em;
         padding: 0.3em;

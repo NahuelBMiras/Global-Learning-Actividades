@@ -1,0 +1,40 @@
+<label
+  >Nombre/s
+  <input type="text" placeholder="Nombre" />
+  <p></p>
+</label>
+<label
+  >Apellido/s
+  <input type="text" placeholder="Apellido" />
+  <p></p>
+</label>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const name = document.querySelectorAll("input");
+      const myButton = document.querySelector("button");
+      const mensaje = document.querySelectorAll("p");
+  
+      name.addEventListener("input", () => {
+        const inputValue = name.value;
+        let isValid = true;
+  
+        for (let i = 0; i < inputValue.length; i++) {
+          const char = inputValue.charAt(i);
+          if ((/[0-9]/).test(char)) {
+            isValid = false;
+            break;
+          }
+        }
+  
+        if (!isValid) {
+            mensaje.innerText = "Caracter No valido.";
+          myButton.disabled = true;
+        } else {
+            mensaje.innerText = "";
+          myButton.disabled = false;
+        }
+      });
+    });
+  </script>
+  
