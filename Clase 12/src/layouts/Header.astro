@@ -39,13 +39,17 @@ const { title } = Astro.props;
 
   body {
     height: 100svh;
+    display: grid;
+    grid-template-rows: 2fr 5fr 1fr;
   }
 
   header {
     background-color: rgb(0, 0, 0);
     width: 100%;
-    text-align: center;
-    padding: 1em 1em 0.7em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     .title {
       font-size: 3rem;
@@ -60,5 +64,8 @@ const { title } = Astro.props;
 
   main {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

@@ -1,19 +1,21 @@
 <label
   >Nombre/s
+  <br />
   <input type="text" placeholder="Nombre" />
-  <p></p>
+  <p class="massgeInput"></p>
 </label>
 <label
   >Apellido/s
+  <br />
   <input type="text" placeholder="Apellido" />
-  <p></p>
+  <p class="massgeInput"></p>
 </label>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const names = document.querySelectorAll("input");
     const myButton = document.querySelector("button");
-    const mensaje = document.querySelectorAll("p");
+    const mensaje = document.querySelectorAll(".massgeInput");
 
     names.forEach((input, indice) => {
       input.addEventListener("input", () => {
@@ -29,11 +31,31 @@
         }
         if (!isValid) {
           mensaje[indice].style.display = "block";
-          mensaje[indice].innerText = "El nombre solo puede contener números.";
+          mensaje[indice].innerText = "El nombre no puede contener números.";
           myButton.disabled = true;
         } else {
           mensaje[indice].style.display = "none";
-          mensaje[indice].innerText = "El nombre solo puede contener números.";
+          myButton.disabled = false;
+        }
+      });
+
+      input.addEventListener("blur", () => {
+        const inputValue = names[indice].value;
+        let char = inputValue.charAt(indice);
+        let isValid = true;
+        for (let i = 0; i < inputValue.length; i++) {
+          const char = inputValue.charAt(i);
+          if (/[0-9]/.test(char)) {
+            isValid = false;
+            break;
+          }
+        }
+        if (!isValid) {
+          mensaje[indice].style.display = "block";
+          mensaje[indice].innerText = "El nombre no puede contener números.";
+          myButton.disabled = true;
+        } else {
+          mensaje[indice].style.display = "none";
           myButton.disabled = false;
         }
       });
@@ -47,5 +69,10 @@
     margin-top: 0;
     margin-bottom: 0;
     display: none;
+  }
+  @media (width>540px) {
+    br {
+      display: none;
+    }
   }
 </style>

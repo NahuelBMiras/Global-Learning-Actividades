@@ -10,23 +10,24 @@ import Header from "../layouts/Header.astro";
       <div class="form-container">
         <InputsName />
         <label
-          >Email or Username
-          <input type="email" placeholder="tumail@gmail.com" />
+          >Email
+          <br />
+          <input class="email" placeholder="tumail@gmail.com" />
+          <p class="message">No es un formato valido</p>
         </label>
         <label
           >Asunto
+          <br />
           <input type="text" placeholder="Asunto" />
         </label>
         <label>
           Cumpleaños
+          <br />
           <input type="date" />
         </label>
       </div>
-      <textarea
-        name="mensaje"
-        rows="4"
-        cols="50"
-        placeholder="Contenido del asunto..."></textarea>
+      <textarea name="mensaje" placeholder="Contenido del asunto...">
+      </textarea>
 
       <button>Send</button>
     </fieldset>
@@ -34,15 +35,46 @@ import Header from "../layouts/Header.astro";
 </Header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const misInputs = document.querySelectorAll("input");
+  document.addEventListener("DOMContentLoaded", () => {
+    const emailInput = document.querySelector(".email");
+    const messageEmail = document.querySelector(".message");
+    const myButton = document.querySelector("button");
+    const Domains = ["@hotmail.com", "@gmail.com", "@yahoo.com", "@outlookcom"];
+    emailInput.addEventListener("blur", () => {
+      const emailValue = emailInput.value;
 
-    misInputs.forEach((input, indice) => {
+      for (const domain of Domains) {
+        if (emailValue.includes(domain)) {
+          if (
+            emailValue.endsWith(domain) &&
+            emailValue.replace(domain, "") !== ""
+          ) {
+            console.log(emailValue.replace(domain, ""));
+            messageEmail.style.display = "none";
+            myButton.disabled = false;
+          } else {
+            messageEmail.style.display = "block";
+            myButton.disabled = true;
+          }
+
+          break;
+        } else {
+          messageEmail.style.display = "block";
+          myButton.disabled = true;
+        }
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const myInputs = document.querySelectorAll("input");
+
+    myInputs.forEach((input, indice) => {
       input.addEventListener("keypress", (evento) => {
         if (evento.key === "Enter") {
           evento.preventDefault();
-          if (indice < misInputs.length - 1) {
-            misInputs[indice + 1].focus();
+          if (indice < myInputs.length - 1) {
+            myInputs[indice + 1].focus();
           }
         }
       });
@@ -50,14 +82,22 @@ import Header from "../layouts/Header.astro";
   });
 </script>
 
-
 <style>
+  .message {
+    margin: 0 0 0 0;
+    display: none;
+    color: red;
+  }
   form {
     width: 70%;
-    margin: 0 auto;
     margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     fieldset {
+      width: 100%;
+      max-width: 738px;
       font-size: 1.3rem;
       display: flex;
       justify-content: center;
@@ -84,12 +124,22 @@ import Header from "../layouts/Header.astro";
 
       textarea {
         margin-top: 1em;
+        width: 80%;
+        max-width: 464px;
+        aspect-ratio: 4/1;
+        resize: none;
       }
 
       button {
         margin-top: 1em;
         padding: 0.3em;
       }
+    }
+  }
+
+  @media (width>540px) {
+    br {
+      display: none;
     }
   }
 </style>
