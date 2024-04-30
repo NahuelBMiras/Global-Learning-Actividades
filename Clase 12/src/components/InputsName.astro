@@ -10,31 +10,42 @@
 </label>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const name = document.querySelectorAll("input");
-      const myButton = document.querySelector("button");
-      const mensaje = document.querySelectorAll("p");
-  
-      name.addEventListener("input", () => {
-        const inputValue = name.value;
+  document.addEventListener("DOMContentLoaded", function () {
+    const names = document.querySelectorAll("input");
+    const myButton = document.querySelector("button");
+    const mensaje = document.querySelectorAll("p");
+
+    names.forEach((input, indice) => {
+      input.addEventListener("input", () => {
+        const inputValue = names[indice].value;
+        let char = inputValue.charAt(indice);
         let isValid = true;
-  
         for (let i = 0; i < inputValue.length; i++) {
           const char = inputValue.charAt(i);
-          if ((/[0-9]/).test(char)) {
+          if (/[0-9]/.test(char)) {
             isValid = false;
             break;
           }
         }
-  
         if (!isValid) {
-            mensaje.innerText = "Caracter No valido.";
+          mensaje[indice].style.display = "block";
+          mensaje[indice].innerText = "El nombre solo puede contener números.";
           myButton.disabled = true;
         } else {
-            mensaje.innerText = "";
+          mensaje[indice].style.display = "none";
+          mensaje[indice].innerText = "El nombre solo puede contener números.";
           myButton.disabled = false;
         }
       });
     });
-  </script>
-  
+  });
+</script>
+
+<style>
+  p {
+    color: red;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: none;
+  }
+</style>
