@@ -2,20 +2,20 @@
   >Nombre/s
   <br />
   <input type="text" placeholder="Nombre" />
-  <p class="massgeInput"></p>
+  <p class="messageInput"></p>
 </label>
 <label
   >Apellido/s
   <br />
   <input type="text" placeholder="Apellido" />
-  <p class="massgeInput"></p>
+  <p class="messageInput"></p>
 </label>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const names = document.querySelectorAll("input");
     const myButton = document.querySelector("button");
-    const mensaje = document.querySelectorAll(".massgeInput");
+    const message = document.querySelectorAll(".messageInput");
 
     names.forEach((input, indice) => {
       input.addEventListener("input", () => {
@@ -30,11 +30,11 @@
           }
         }
         if (!isValid) {
-          mensaje[indice].style.display = "block";
-          mensaje[indice].innerText = "El nombre no puede contener números.";
+          message[indice].style.display = "block";
+          message[indice].innerText = "El nombre no puede contener números.";
           myButton.disabled = true;
         } else {
-          mensaje[indice].style.display = "none";
+          message[indice].style.display = "none";
           myButton.disabled = false;
         }
       });
@@ -51,11 +51,11 @@
           }
         }
         if (!isValid) {
-          mensaje[indice].style.display = "block";
-          mensaje[indice].innerText = "El nombre no puede contener números.";
+          message[indice].style.display = "block";
+          message[indice].innerText = "El nombre no puede contener números.";
           myButton.disabled = true;
         } else {
-          mensaje[indice].style.display = "none";
+          message[indice].style.display = "none";
           myButton.disabled = false;
         }
       });
