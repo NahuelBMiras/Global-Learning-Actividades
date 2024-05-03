@@ -1,0 +1,41 @@
+/* 
+!Astro es un Framework web, este nos permite crear webs
+
+ !Podemos crear apis
+ 	Creación de APIs: Con Astro, puedes crear APIs (Interfaz de Programación de Aplicaciones) para proporcionar servicios y datos a tus aplicaciones web. Puedes definir tus propios endpoints para manejar solicitudes HTTP y devolver datos en diferentes formatos, como JSON.
+
+!Podemos crear end points
+    Endpoints personalizados: Astro te permite definir tus propios endpoints personalizados para manejar solicitudes HTTP específicas. Estos endpoints pueden realizar tareas específicas, como acceder a bases de datos, procesar datos, autenticar usuarios, etc.
+    Los "endpoints" son URLs específicas de un servidor web que están diseñadas para manejar solicitudes HTTP particulares. En el contexto de un framework como Astro, los endpoints personalizados son rutas definidas por el desarrollador que especifican cómo se deben manejar las solicitudes HTTP entrantes para una aplicación web. 
+    
+!Una solicitud HTTP 
+(Protocolo de Transferencia de Hipertexto) es un mensaje enviado por un cliente a un servidor web para solicitar algún tipo de recurso o acción. Es la base fundamental de la comunicación en la World Wide Web y permite que los clientes (como navegadores web, aplicaciones móviles, etc.) obtengan información de los servidores y realicen diversas operaciones en línea.
+
+Una solicitud HTTP consta de varios componentes, incluidos:
+
+    Método: Indica la acción que se solicita al servidor. Algunos de los métodos más comunes son GET (para obtener recursos), POST (para enviar datos al servidor), PUT (para modificar un recurso existente en el servidor), DELETE (para eliminar un recurso), entre otros.
+
+    URL (Uniform Resource Locator): Especifica la ubicación del recurso solicitado en el servidor. Por ejemplo, https://www.ejemplo.com/index.html.
+
+    Encabezados (Headers): Proporcionan información adicional sobre la solicitud, como el tipo de contenido aceptable, las cookies del cliente, la codificación de contenido, etc.
+
+    Cuerpo (Body): Opcionalmente, puede contener datos adicionales que el cliente desea enviar al servidor, como datos de formulario en una solicitud POST.
+
+Cuando un cliente realiza una solicitud HTTP, esta se envía al servidor, que procesa la solicitud y devuelve una respuesta adecuada. La respuesta HTTP incluye un código de estado (como 200 OK, 404 Not Found, etc.), encabezados y, a veces, un cuerpo de mensaje que contiene los datos solicitados.
+
+Cuando un cliente, como un navegador web o una aplicación móvil, realiza una solicitud HTTP a un servidor web, la URL solicitada apunta a un recurso específico. Los endpoints son responsables de determinar cómo se debe manejar esa solicitud y qué respuesta debe devolver el servidor.
+ */
+
+/*
+!Arquitectura: Islas
+	La mayor parte de la pagina es estática y las partes que no lo son se las llama islas dinámicas, por lo tanto toda la pagina es estática exepto esa parte, lo que la vuelve dinámica es el Js
+	Por lo tanto las islas sirven para crear aquellas partes que queremos que tengan Js para manipular el DOM aparte vincularla a nuestro html y que este solo se use en el momento que sea necesario
+	En conclusion lo que conseguimos es separar el contenido estático del dinámico lo que ayuda a mejorar el rendimiento y la experiencia del usuario. El Js se carga y ejecuta solo cuando es necesario para actualizar una isla dinámica específica, en lugar de cargar y ejecutar Js en toda la página. Esto puede mejorar significativamente el tiempo de carga y la eficiencia de la página web.
+
+No ejecuta código en la consola(cliente) lo hace en la parte del servidor o en la parte de la compilación 
+*/
+
+/*
+A diferencia de otros frameworks no estas atado a ninguna biblioteca, podes usar mas de una a la vez
+
+*/

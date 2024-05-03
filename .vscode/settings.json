@@ -1,4 +1,16 @@
 {
   "cSpell.language": "en,es-ES",
-  "cSpell.ignoreWords": ["Maomao", "practicidad"]
+  "cSpell.ignoreWords": [
+    "Maomao",
+    "Renderizado",
+    "dinámicamente",
+    "escalabilidad",
+    "exepto",
+    "modularidad",
+    "practicidad",
+    "prerrenderizado",
+    "renderizado",
+    "renderizan",
+    "reutilizables"
+  ]
 }

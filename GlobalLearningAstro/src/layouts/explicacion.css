@@ -1,0 +1,10 @@
+/* 
+Aca podemos escribir nuestros componentes que estén conformados por dos etiquetas 
+Los layout y componentes que creemos al usarlos e usa el nombre del archivo que usamos
+Ejem:
+ButtonHeader.astro
+<ButtonHeader>
+<ButtonHeader/>
+
+Por lo tanto nuestros archivos los tenemos que crear con mayúsculas si van a ser para este propósito
+*/

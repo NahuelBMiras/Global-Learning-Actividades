@@ -1,0 +1,36 @@
+/* 
+!Los componentes que creemos se escribe siempre la primer letra n mayúsculas
+
+Los layout y componentes que creemos al usarlos e usa el nombre del archivo que usamos
+Ejem:
+ButtonHeader.astro
+<ButtonHeader/>
+*/
+
+/* 
+En Astro, los "componentes" son bloques de construcción reutilizables que encapsulan HTML, CSS y JavaScript para definir partes específicas de una interfaz de usuario. Estos componentes se utilizan para construir aplicaciones web modulares y escalables.
+
+Cada componente en Astro está compuesto de tres partes principales:
+
+    HTML: Define la estructura y el contenido del componente, utilizando etiquetas HTML estándar y, en algunos casos, etiquetas específicas de Astro para funcionalidades adicionales.
+
+    CSS: Contiene estilos específicos para el componente, utilizando CSS estándar para definir la apariencia y el diseño.
+
+    JavaScript: Incluye lógica de comportamiento dinámico y manipulación del DOM asociada con el componente. Esto puede incluir interacciones de usuario, gestión de eventos, llamadas a API, entre otros.
+
+Los componentes en Astro siguen el enfoque de desarrollo basado en componentes, lo que significa que pueden ser fácilmente reutilizados en diferentes partes de una aplicación web. Esto promueve la modularidad y la reutilización del código, lo que a su vez facilita el mantenimiento y la escalabilidad del proyecto.
+
+En resumen, los componentes en Astro son unidades autocontenidas de código que encapsulan HTML, CSS y JavaScript para definir partes específicas de una interfaz de usuario, lo que facilita la creación de aplicaciones web modulares y escalables.
+*/
+
+/* 
+Sí, en muchos aspectos, los componentes en Astro comparten similitudes con los Web Components. Tanto los componentes en Astro como los Web Components son unidades de código reutilizables que encapsulan HTML, CSS y JavaScript para definir partes específicas de una interfaz de usuario. Sin embargo, hay algunas diferencias importantes:
+
+    Sintaxis y Framework: Astro es un marco de trabajo para construir aplicaciones web rápidas y modernas, mientras que los Web Components son una especificación estándar del W3C que puede ser implementada en cualquier marco o librería de JavaScript.
+
+    Renderizado: Astro utiliza una estrategia de renderizado estático y prerrenderizado para ofrecer un rendimiento rápido, mientras que los Web Components generalmente se renderizan dinámicamente en el navegador.
+
+    Tecnologías Subyacentes: Astro está diseñado para integrarse bien con tecnologías modernas como React, Vue.js y Svelte, mientras que los Web Components son una especificación web independiente que puede ser utilizada sin depender de un marco de trabajo específico.
+
+    Alcance de la Comunidad: Los Web Components tienen una especificación estándar y una comunidad más amplia que abarca múltiples marcos y bibliotecas, mientras que Astro es un proyecto más específico con una comunidad centrada en torno a su uso particular.
+*/
