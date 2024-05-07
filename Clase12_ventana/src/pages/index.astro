@@ -1,0 +1,62 @@
+---
+import Header from "../layouts/Header.astro"
+import VentanaModal from "../components/VentanaModal.astro"
+---
+<Header title="ventana">
+	<button class="button_index">Ventana Modal</button>
+	<VentanaModal/>
+</Header>
+
+<style is:global>
+	.button_index{
+		all: unset;
+
+		margin-bottom: 2em;
+		background-color: darkkhaki;
+		padding: 0.4em;
+		border: 2px solid transparent;
+
+		cursor: pointer;
+
+		font-size: 1.5em;
+		&:hover{
+			border: 2px solid black;
+		}
+	}
+	.modal-window{
+		display: none;
+	}
+	.show{
+		display: block;
+		background-color: rgba(255, 255, 255, 0.575);
+	}
+	.frieren{
+		width: 100%;
+		background-image: url(../../public/frieren_celu.jpg);
+	}
+
+	@media (width > 440px) {
+  .frieren{
+		background-image: url(../../public/frieren2.jpg);
+		background-size: cover;
+	}
+}
+
+
+</style>
+
+<script>
+	window.addEventListener("DOMContentLoaded", () => {
+		const buttonIndex = document.querySelector(".button_index")
+		const modalWindow = document.querySelector(".modal-window")
+		
+		buttonIndex.addEventListener("click", ()=>{
+			
+			const show = modalWindow.classList.add("show")
+			const hideButton = buttonIndex.style.display = "none"
+			return {show, hideButton}
+			
+		})
+	})
+</script>
+

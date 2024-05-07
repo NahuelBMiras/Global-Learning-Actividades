@@ -1,0 +1,157 @@
+---
+---
+<div class="modal-window">
+    <div class="modal-window_container">
+        <div class="text_container">
+            <h3 class="modal-window_title">Holis</h3>
+            <p class="modal-window_text">
+                Esta es mi primera ventana modal
+            </p>
+        </div>
+        <div class="button_container">
+            <button class="confirm">Confirmar</button>
+            <button class="cancel">Cancelar</button>
+            <button class="close">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+.modal-window {
+  width: 70%;
+  aspect-ratio:2/1;
+  border: 1px solid black;
+  padding: 0.3em;
+
+  .modal-window_container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0.3em;
+
+    .text_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+
+      padding: 0.3em;
+      margin-bottom: 1em;
+
+      .modal-window_title {
+        color: darkblue;
+        font-size: 1.4em;
+        margin-bottom: 0.1em;
+      }
+      .modal-window_text {
+        font-size: 1em;
+      }
+    }
+
+    .button_container {
+      width: 90%;
+      border-top: 1px solid black;
+      display: flex;
+      padding: 0.2em;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        all: unset;
+        font-size: 1em;
+        padding: 0.3em;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .confirm {
+        background-color: rgba(0, 255, 0, 0.171);
+        &:hover {
+          border: 1px solid lime;
+        }
+      }
+      .cancel {
+        background-color: rgba(220, 20, 60, 0.123);
+        &:hover {
+          border: 1px solid crimson;
+        }
+      }
+      .close {
+        background-color: red;
+        color: white;
+
+        &:hover{
+          border-color: black;
+          color: black;
+        }
+      }
+    }
+  }
+}
+@media (width > 440px) {
+  .modal-window {
+    width: 50%;
+  }
+}
+
+@media (width > 600px) {
+  .modal-window {
+  .modal-window_container {
+    .text_container {
+      .modal-window_title {
+        font-size: 1.7em;
+      }
+      .modal-window_text {
+        font-size: 1.1em;
+      }
+    }
+
+    .button_container {
+      button {
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+}
+
+@media (width > 750px) {
+  .modal-window {
+    max-width: 385px;
+  }
+}
+
+</style>
+
+<script>
+	window.addEventListener("DOMContentLoaded", () => {
+		const confirm = document.querySelector(".confirm")
+		const cancel = document.querySelector(".cancel")
+		const close = document.querySelector(".close")
+		const modalWindow = document.querySelector(".modal-window")
+		const main = document.querySelector(".background")
+    const buttonIndex = document.querySelector(".button_index")
+
+		close.addEventListener("click", ()=>{
+			const show = modalWindow.classList.remove("show")
+      const showButton = buttonIndex.style.display = "block"
+			return {show, showButton}
+		})
+
+		confirm.addEventListener("click", ()=>{
+			const frieren = main.classList.add("frieren")
+			return frieren
+		})
+
+		cancel.addEventListener("click", ()=>{
+			const frieren = main.classList.remove("frieren")
+			return frieren
+		})
+	})
+</script>

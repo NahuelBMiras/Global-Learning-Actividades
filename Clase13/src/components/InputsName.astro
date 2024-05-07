@@ -1,0 +1,115 @@
+
+<label class="label"
+  >Nombre/s
+  <br />
+  <input type="text" placeholder="Nombre" required/>
+  <span class="messageInput"></span>
+</label>
+<label class="label"
+  >Apellido/s
+  <br />
+  <input type="text" placeholder="Apellido" required/>
+  <span class="messageInput"></span>
+</label>
+
+<script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const names = document.querySelectorAll('input');
+  const myButton = document.querySelector('button');
+  const message = document.querySelectorAll('.messageInput');
+
+  names.forEach((input, indice) => {
+    input.addEventListener('input', () => {
+      const inputValue = names[indice].value;
+      let isValid = true;
+      for (let i = 0; i < inputValue.length; i++) {
+        const char = inputValue.charAt(i);
+        if (/[0-9]/.test(char)) {
+          isValid = false;
+          break;
+        }
+      }
+      if (!isValid) {
+        message[indice].style.display = 'block';
+        message[indice].innerText = 'No puede contener números.';
+        myButton.disabled = true;
+      } else {
+        message[indice].style.display = 'none';
+        myButton.disabled = false;
+      }
+    });
+
+    input.addEventListener('blur', () => {
+      const inputValue = names[indice].value;
+      let isValid = true;
+      for (let i = 0; i < inputValue.length; i++) {
+        const char = inputValue.charAt(i);
+        if (/[0-9]/.test(char)) {
+          isValid = false;
+          break;
+        }
+      }
+      if (!isValid) {
+        message[indice].style.display = 'block';
+        message[indice].innerText = 'No puede contener números.';
+        myButton.disabled = true;
+      } else {
+        message[indice].style.display = 'none';
+        myButton.disabled = false;
+      }
+    });
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () =>{
+  const send = document.querySelector(".send")
+  const inputs = document.querySelectorAll("input")
+  send.addEventListener("click", () => {
+    console.log(inputs)
+    inputs.forEach(input =>{
+      localStorage.setItem(input.type, input.value)
+    })
+  })
+})
+</script>
+
+<style>
+
+  label{
+    position: relative;
+    padding: 0.3em;
+
+    .messageInput {
+      width: 100%;
+      position: absolute;
+      top: 50px;
+      color: red;
+      margin-top: 0;
+      margin-bottom: 0;
+      display: none;
+    }
+  }
+  @media (width>540px) {
+    br {
+      display: none;
+    }
+
+    label{
+      position: relative;
+      padding: 0.3em;
+    
+      .messageInput {
+        width: 100%;
+        position: absolute;
+        top: 35px;
+        color: red;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: none;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,93 @@
+---
+import Footer from "../components/Footer.astro";
+import VentanaModal from "../components/VentanaModal.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Mi ventana modal 😁</h1>
+    </header>
+    <main class="background">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 0.5fr;
+  }
+
+  header {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      font-size: 2rem;
+      color: azure;
+    }
+
+    .sub-title {
+      color: azure;
+      font-size: 1.5rem;
+    }
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (width > 600px) {
+  header {
+    .title {
+      font-size: 3rem;
+      color: azure;
+    }
+  }
+}
+</style>
+
+<script>
+	window.addEventListener("DOMContentLoaded", () => {
+		const confirm = document.querySelector(".confirm")
+    const main = document.querySelector("main")
+
+    confirm.addEventListener("click", ()=>{
+			const frieren = main.classList.add(".frieren")
+			return frieren
+		})
+	})
+</script>

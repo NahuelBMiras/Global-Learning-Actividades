@@ -1,0 +1,163 @@
+---
+import InputsName from "../components/InputsName.astro";
+import Header from "../layouts/Header.astro";
+---
+
+<Header title="Mi Formulario">
+  <form action="">
+    <fieldset>
+      <legend>Tu consulta</legend>
+      <div class="form-container">
+        <InputsName />
+        <label
+          >Email
+          <br />
+          <input class="email" placeholder="tumail@gmail.com" required/>
+          <span class="message">No es un formato valido</span>
+        </label>
+        <label
+          >Asunto
+          <br />
+          <input type="text" placeholder="Asunto" required/>
+        </label>
+        <label>
+          Cumpleaños
+          <br />
+          <input type="date" required/>
+        </label>
+      </div>
+      <textarea name="mensaje" placeholder="Contenido del asunto...">
+      </textarea>
+      <button class="send">Send</button>
+    </fieldset>
+  </form>
+</Header>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const emailInput = document.querySelector('.email');
+  const messageEmail = document.querySelector('.message');
+  const myButton = document.querySelector('button');
+  const Domains = ['@hotmail.com', '@gmail.com', '@yahoo.com', '@outlookcom'];
+  emailInput.addEventListener('blur', () => {
+    const emailValue = emailInput.value;
+
+    for (const domain of Domains) {
+      if (emailValue.includes(domain)) {
+        if (
+          emailValue.endsWith(domain) &&
+          emailValue.replace(domain, '') !== ''
+        ) {
+          console.log(emailValue.replace(domain, ''));
+          messageEmail.style.display = 'none';
+          myButton.disabled = false;
+        } else {
+          messageEmail.style.display = 'block';
+          myButton.disabled = true;
+        }
+
+        break;
+      } else {
+        messageEmail.style.display = 'block';
+        myButton.disabled = true;
+      }
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const myInputs = document.querySelectorAll('input');
+
+  myInputs.forEach((input, indice) => {
+    input.addEventListener('keypress', (evento) => {
+      if (evento.key === 'Enter') {
+        evento.preventDefault();
+        if (indice < myInputs.length - 1) {
+          myInputs[indice + 1].focus();
+        }
+      }
+    });
+  });
+});
+</script>
+
+<style>
+
+  form {
+    width: 70%;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    fieldset {
+      width: 100%;
+      max-width: 738px;
+      font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 1em;
+
+      .form-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+
+        label {
+          font-size: 1rem;
+          margin-top: 1em;
+          cursor: pointer;
+          position: relative;
+          padding: 0.3em;
+
+          input {
+            padding: 0.3em;
+            margin-bottom: 1em;
+          }
+          .message {
+            display: none;
+            color: red;
+            position: absolute;
+            top: 55px;
+          }
+        }
+      }
+
+      textarea {
+        margin-top: 1em;
+        width: 80%;
+        max-width: 464px;
+        aspect-ratio: 4/1;
+        resize: none;
+      }
+
+      button {
+        margin-top: 1em;
+        padding: 0.3em;
+      }
+    }
+  }
+
+  @media (width>540px) {
+  br {
+    display: none;
+  }
+
+
+  form {
+    fieldset {
+      .form-container {
+        label {
+          .message {
+            top: 35px;
+          }
+        }
+      }
+    }
+  }
+    
+  }
+</style>
