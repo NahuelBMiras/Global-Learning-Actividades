@@ -1,0 +1,6 @@
+{"duration":1718398336497,"method":"GET","url":"/","status":200}
+{"duration":1718398340939,"method":"GET","url":"/hola","status":200}
+{"duration":1718398469596,"method":"GET","url":"/hola","status":200}
+{"duration":1718398486039,"method":"GET","url":"/","status":200}
+{"duration":1718398491729,"method":"GET","url":"/h","status":200}
+{"duration":1718398573101,"method":"GET","url":"/h","status":404}
