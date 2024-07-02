@@ -1,0 +1,11 @@
+cuantas tiendas hay?
+    2
+cuantas peliculas hay de mas de 120min?
+    457
+cuantos pagos realizo el cliente con el id 472?
+    26
+cual es el id de la pelicula que tiene un id de inventario 303?
+    68
+cual es la direccion y distrito de la persona cuyo telefono es 634445428822?
+    adrress: 1565 Tangail Manor
+    district: Okinawa

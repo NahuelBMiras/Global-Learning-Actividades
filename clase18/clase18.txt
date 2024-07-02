@@ -1,0 +1,11 @@
+Contar cuantas peliculas empiezan con la letra 'S'
+    119
+Sumar la duracion en minutos de todas las pelliculas clasificadas para 'PG-13'
+    26859
+Mostrar todos los emails de los clientes junto con la suma de todas las peliculas que rentaron
+Mostrar el numero de telefono de la direccion que tiene el codigo postal mas grande
+    934730187245
+Mostrar la direccion, el distrito y el nombre de la ciudad del primer cliente inactivo
+    direccion: 42 Fontana Avenue
+    distrito: Fejr
+    ciudad: Szkesfehrvr
